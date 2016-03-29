@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+{% set dict={'index':'Home' ,'food':'Food' ,'family':'Family' ,'login':'Login'} %}
+{% set title = dict[path].upper()%}
+<head>
+	<meta charset="UTF-8">
+	<title>Mengtian Xu - {{title}}</title>
+</head>
+<body>
+	<header>
+		{% if path=='index'%}
+			<h1>Mengtian Xu</h1>
+			<h2>Home</h2>
+		{% else %}
+			{% set header = dict[path]%}
+			<h1>{{header}}</h1>
+		{% endif %}
+		<nav>
+			{% for caption, href in [('Home','index') ,('Food','food') ,('Family','family') ,('Login', 'login')] %}
+				{% if path==href%}
+					{% set caption=caption.upper() %}
+				{% endif %}
+				<a href="{{ href }}">{{ caption }}</a>
+			{% endfor %}
+		</nav>
+	</header>
+	{% block content %}
+	I should never see this content.  It should be replaced.
+	{% endblock %}
+	<footer>
+		<p>Copyright &copy; Mengtian Xu. This is url to <a href="http://xumengtian-1204.appspot.com/">GuessingGame</a></p>
+	</footer>
+	
+</body>
+</html>
