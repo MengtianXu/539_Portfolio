@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+{% set dict={'index':'Home' ,'resume':'Resume' ,'interest':'Interest' ,'timeline':'Timeline'} %}
+{% set title = dict[path].upper()%}
+<head>
+	<meta charset="UTF-8">
+	<title>Mengtian - {{title}}</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<link rel = "stylesheet" type="text/css" href="static/base.css">
+	<script type = "text/JavaScript" src ="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script type = "text/JavaScript">
+		$(function(){$('a').each(function(){
+							if($(this).prop("href") == window.location.href) {
+								$(this).closest('li').addClass('active');
+							}
+						});
+		});
+	</script>
+
+</head>
+<body>
+	<header>
+<!-- 		{% if path=='index'%}
+			<h1>Mengtian Xu</h1>
+			<h2>Home</h2>
+		{% else %}
+			{% set header = dict[path]%}
+			<h1>{{header}}</h1>
+		{% endif %} -->
+
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<ul class="nav nav-pills">
+				{% for caption, href in [('Home','index') ,('Resume','resume') ,('Interest','interest') ,('Timeline', 'timeline')] %}
+					{% if path==href%}
+						{% set caption=caption.upper() %}
+					{% endif %}
+							<li role="presentation">
+								<a href="{{ href }}">{{ caption }}</a>
+							</li>
+				{% endfor %}
+				</ul>
+			</div>
+		</nav>
+	</header>
+	{% block content %}
+	I should never see this content.  It should be replaced.
+	{% endblock %}
+	<footer>
+		<div class="panel-footer" >
+			<div class = "contactInfo col-md-6" >
+				<span class="glyphicon glyphicon-envelope" aria-hidden="true"> mtxu@umich.edu</span>
+			</div>
+			<div class="socialIcons">
+				<a href="#" class="icon-button instagram"><i class="fa fa-instagram"></i><span></span></a>
+				<a href="#" class="icon-button weibo"><i class="fa fa-weibo"></i><span></span></a>
+				<a href="#" class="icon-button github"><i class="fa fa-github"></i><span></span></a>
+				<a href="#" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
+			</div>
+				<p>Copyright &copy; Mengtian Xu.</p>
+		</div>
+	</footer>
+	
+</body>
+</html>

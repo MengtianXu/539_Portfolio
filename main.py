@@ -38,8 +38,8 @@ class HomeHandler(webapp2.RequestHandler):
 class LoginHandler(webapp2.RequestHandler):
     def get(self):
         path=str(self.request.path)
-        template = JINJA_ENVIRONMENT.get_template('templates/login.html')
-        self.response.write(template.render({'title':'Login','path':path[1:]}))
+        template = JINJA_ENVIRONMENT.get_template('templates/timeline.html')
+        self.response.write(template.render({'title':'Timeline','path':path[1:]}))
     def post(self):
         path=str(self.request.path)
         name = self.request.get("name")
@@ -54,8 +54,8 @@ class LoginHandler(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/', HomeHandler),
     ('/index', HomeHandler),
-    ('/food', HomeHandler),
-    ('/family', HomeHandler),
-    ('/login', LoginHandler),
+    ('/resume', HomeHandler),
+    ('/interest', HomeHandler),
+    ('/timeline', LoginHandler),
 
 ], debug=True)
