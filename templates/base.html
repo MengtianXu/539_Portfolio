@@ -22,23 +22,19 @@
 								$(this).closest('li').addClass('active');
 							}
 						});
+		$('body').scrollspy({ target: '#navbar-example' })
 		});
+		// document.getElementById("container").className = "scroll";
 	</script>
 
 </head>
-<body>
+<body data-spy="scroll" data-target=".navbar">
 	<header>
-<!-- 		{% if path=='index'%}
-			<h1>Mengtian Xu</h1>
-			<h2>Home</h2>
-		{% else %}
-			{% set header = dict[path]%}
-			<h1>{{header}}</h1>
-		{% endif %} -->
-
 		<nav class="navbar navbar-default navbar-static-top">
+			<img src="/static/IMG_2669.JPG" class="img-square" alt="personalIcon">
+			<p class="name">Mengtian Xu</p>
 			<div class="container">
-				<ul class="nav nav-pills">
+				<ul class="nav nav-pills" role="tablist">
 				{% for caption, href in [('Home','index') ,('Resume','resume') ,('Interest','interest') ,('Timeline', 'timeline')] %}
 					{% if path==href%}
 						{% set caption=caption.upper() %}
@@ -51,21 +47,33 @@
 			</div>
 		</nav>
 	</header>
+	<div class="main_content">
 	{% block content %}
 	I should never see this content.  It should be replaced.
 	{% endblock %}
+	</div>
 	<footer>
 		<div class="panel-footer" >
 			<div class = "contactInfo col-md-6" >
-				<span class="glyphicon glyphicon-envelope" aria-hidden="true"> mtxu@umich.edu</span>
+				<p class="glyphicon glyphicon-envelope" aria-hidden="true"> mtxu@umich.edu</p>
 			</div>
 			<div class="socialIcons">
-				<a href="#" class="icon-button instagram"><i class="fa fa-instagram"></i><span></span></a>
-				<a href="#" class="icon-button weibo"><i class="fa fa-weibo"></i><span></span></a>
-				<a href="#" class="icon-button github"><i class="fa fa-github"></i><span></span></a>
-				<a href="#" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
+				<div class="icon">
+					<a href="#" class="icon-button instagram"><i class="fa fa-instagram"></i><span></span></a>
+				</div>
+				<div class="icon">
+					<a href="#" class="icon-button weibo"><i class="fa fa-weibo"></i><span></span></a>
+				</div>
+				<div class="icon">
+					<a href="#" class="icon-button github"><i class="fa fa-github"></i><span></span></a>
+				</div>
+				<div class="icon">
+					<a href="#" class="icon-button facebook"><i class="fa fa-facebook"></i><span></span></a>
+				</div>
 			</div>
+			<div class="copyright">
 				<p>Copyright &copy; Mengtian Xu.</p>
+			</div>
 		</div>
 	</footer>
 	
