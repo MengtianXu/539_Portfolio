@@ -1,3 +1,24 @@
+body{
+	background-image: url("/static/bkg.jpg");
+	background-attachment: fixed;
+}
+.navbar {
+   background: rgba(0,0,0,0.4);
+   border: 0px;
+}
+.panel-footer{
+	border: 0px;
+	background: rgba(0,0,0,0.4);
+}
+
+.name{
+	position:absolute;
+	margin-top: 10px;
+	margin-left: 50px;
+	font-family: Tahoma, Geneva, sans-serif;
+	color: white;
+	font-size: 20px;
+}
 
 .container > ul {
 	display: inline;
@@ -6,9 +27,24 @@
 	right: 5%;
 	margin: 5px;
 }
-body{
-	background: url('/static/back.jpg');
+
+
+
+.panel-footer{
+	border: 0px;
+	background: rgba(0,0,0,0.4);
 }
+.img-square{
+	position: absolute;
+	margin-top: 10px;
+	margin-left: 10px;
+    width:30px; /* you can use % */
+    height: 30px;
+    border: 1px solid #B3B5B5;
+    z-index:1; 
+    border-radius: 3px;
+}
+
 
 .jumbotron{
 	position: relative;
@@ -46,7 +82,137 @@ body{
 	display: inline;
 	float: right;
 }
+.icon{
+	display: inline-block;
+	/*margin-bottom: 0px;*/
+}
+@media (max-width: 890px){
+	.navbar{
+		/*border: 3px solid red;*/
+		margin-bottom: 0px;
+		width: 140px;
+		height: 400px ;
+	    background-color: rgba(0,0,0,0.4);
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    bottom: 0;
+	    max-height: none;
+	}
+	.navbar {
+	    text-align: center;
+	    display: inline-block;
+	}
+	ul{
+		float: none;
+	    display: block;
+	    margin-left: 19px
+	}
+	.img-square{
+		margin-top: 28px;
+		margin-left: 38px;
+		display: block;
+		width: 60px;
+		height: 60px;
+	}
+	.name{
+		display: absolute;
+		margin-top: 105px;
+		margin-left: 10%;
+		display: block;
+	}
+	.navbar > .container{
+		display: absolute;
+		margin-top: 150px;
+		margin-left: 5%;
+		width: 90% ;
+	}
+	.nav{
+		display:absolute;
+		margin-left: 18px !important;
+		width: 100px ;
+	}
+	li{
+		margin-left: 2px;
+	    display: block;
+	    width:120px;
+	}
+	.main_content{
+		position: relative;
+	    z-index: 10;
+	    margin-left: 140px;
+	    min-height: 100%;
+	    padding: 20px 20px;
+	}
+	.main_content > .container{
+	    position: relative;
+	    min-height: 100%;
+	    border: 2px solid red;
+	    max-width: 100% ;
+	    max-width: 100% ;
+	    max-width: 100% ;
+	    max-width: 100% ;
+/*	    max-width: calc(100% - 0px)!important ;
+	    max-width: -webkit-calc(100% - 0px);
+	    max-width: -o-calc(100% - 10px);
+	    max-width: -moz-calc(100% - 10px);*/
 
+	}
+	.panel-footer{
+		width: 140px;
+		height: 700px ;
+		margin-top: 400px;
+	    background-color: rgba(0,0,0,0.4);
+	    position: fixed;
+	    left: 0;
+	    top: 0;
+	    bottom: 0;
+	    max-height: none;
+	}
+	footer{
+		/*border: 2px solid blue;*/
+		width:140px !important ;
+	}
+	.contactInfo{
+		/*border: 2px solid red;*/
+		display: inline-block;
+		width: 140px;
+		margin-left: -15px;
+		color:#AFB6B6;
+	}
+	.socialIcons{
+		position: absolute;
+		display: block;
+		text-align: center;
+		margin-left: 20px;
+	}
+	.socialIcons > .icon{
+		display: block;
+		margin: 8px;
+	}
+	.copyright > p{
+		display: block;
+		position: relative;
+		margin-top: 240px;
+		bottom: 20px;
+		left: 2px;
+		color:#AFB6B6;
+	}
+	
+}
+@media (max-width: 450px){
+	.main_content{
+		display: none;
+	}
+	footer{
+		display: none;
+	}
+	.nav{
+		
+	}
+	
+
+}
 
 
 /* Circle */
@@ -119,6 +285,3 @@ body{
 	color: white;
 }
 
-.icon { 
-  display: inline-block;
-}
