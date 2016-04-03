@@ -29,21 +29,22 @@
 				}
 			});
 		});
-		$("#thumbnailImage").click(function() {
-		   $(this).attr('width', '400');
-		    $(this).attr('height', '300');
-		});
-		$(function ()
-					{
-		    $('#thumbnailImage').on('click', function ()
-		    {
-		        $(this).width(800);
-		    });
-		});
-		$('#myModal').on('shown.bs.modal', function () {
-			  $('#myInput').focus()
-		})
-
+		// $("#thumbnailImage").click(function() {
+		//    $(this).attr('width', '400');
+		//     $(this).attr('height', '300');
+		// });
+		var mq = window.matchMedia('(min-width: 900px)');
+		if(mq.matches){
+			$(function (){$('.thumbnailImage').on('click', function (){
+				if($(this).hasClass('expanded')){
+					$(this).removeClass('expanded')
+				}
+				else
+		        	$(this).addClass("expanded");
+		    	});
+			});
+		}
+		
 	</script>
 	<link rel = "stylesheet" type="text/css" href="static/base.css">
 
@@ -67,6 +68,12 @@
 				</ul>
 			</div>
 		</nav>
+
+
+
+
+
+		
 		<nav class="mobileView">
 			<div class="dropdown">
 			    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
