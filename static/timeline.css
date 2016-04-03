@@ -166,17 +166,18 @@
         width: -moz-calc(100% - 15px);
         width: -webkit-calc(100% - 15px);
     }
-
-/*    ul.timeline > li > .timeline-badge {
-        left: 15px;
-        margin-left: 0;
-        top: 16px;
-    }*/
-
     ul.timeline > li > .timeline-panel {
         float: right;
         border: 2px solid green;
     }
+@media (max-width: 450px){
+    .timeline-panel:before{
+        display: none;
+    }
+    .timeline:before{
+        display: none;
+    }
+}
 
 /*        ul.timeline > li > .timeline-panel:before {
             border-left-width: 0;
