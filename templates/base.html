@@ -36,16 +36,42 @@
 		var mq = window.matchMedia('(min-width: 900px)');
 		if(mq.matches){
 			$(function (){$('.thumbnailImage').on('click', function (){
+				var scroll = $(window).scrollTop();
 				if($(this).hasClass('expanded')){
 					$(this).removeClass('expanded')
 				}
-				else
-		        	$(this).addClass("expanded");
-		    	});
-			});
-		}
+				else{
+					$(this).addClass("expanded");
+				}	
+		    });
+		    $(window).scrollTop(scroll);
+		});
+	}
 		
 	</script>
+
+	<script type = "text/JavaScript">
+		$(document).ready(function(){
+	  
+	  //Check to see if the window is top if not then display button
+			$(window).scroll(function(){
+			if ($(this).scrollTop() > 100) {
+		    $('.scrollToTop').fadeIn();
+		    } else {
+		      $('.scrollToTop').fadeOut();
+		    }
+		  });
+		  //Click event to scroll to top
+		  $('.scrollToTop').click(function(){
+		    $('html, body').animate({scrollTop : 0},800);
+		    return false;
+		  });
+		  
+		});
+	</script>
+
+
+
 	<link rel = "stylesheet" type="text/css" href="static/base.css">
 
 
@@ -65,15 +91,18 @@
 								<a href="{{ href }}">{{ caption }}</a>
 							</li>
 				{% endfor %}
+				<li>
+					<audio autoplay="" controls="" loop="" preload="">
+			 <source src="/static/music.mp3" type="audio/ogg"></source>
+			 <source src="/static/music.mp3" type="audio/mpeg"></source>
+			 Your browser does not support the audio element.
+			</audio>
+				</li>
 				</ul>
 			</div>
+
 		</nav>
 
-
-
-
-
-		
 		<nav class="mobileView">
 			<div class="dropdown">
 			    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
@@ -97,6 +126,9 @@
 	I should never see this content.  It should be replaced.
 	{% endblock %}
 	</div>
+	<span id="top-link-block" >
+		<a href="#" class="scrollToTop">Back To Top</a>
+	</span>
 	<footer>
 		<div class="panel-footer" >
 			<div class = "contactInfo col-md-6" >
