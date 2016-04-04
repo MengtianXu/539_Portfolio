@@ -1,4 +1,21 @@
-
+.email{
+    color: #363636;
+    font-size: 20px;
+}
+.btn-lg{
+    background-color: rgba(0,0,0,0.4);
+    border: 0px solid transparent;
+    border-radius: 2px;
+    margin-bottom: 100px;
+}
+.btn-lg:hover{
+    background-color:rgba(0,0,0,0.8);
+    border: 0px solid transparent;
+}
+.jumbotron > h2{
+    color: white;
+    font-family: Tahoma, Geneva, sans-serif ;
+}
 
 
 .container > .timeline {

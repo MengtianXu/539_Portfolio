@@ -1,22 +1,21 @@
 {% extends "templates/base.html" %}
 {% block content %}
 
-<link rel = "stylesheet" type="text/css" href="static/index.css">
+<link rel = "stylesheet" property='stylesheet' type="text/css" href="static/index.css">
 
 <div class="container">
 	<div class="jumbotron">
-		<h3>Hi, Welcome!</h3>
-		<p></p>
-		<p><a class="btn btn-primary btn-lg" href="/resume" role="button">Click to view my resume</a></p>
+		<h2>Hi, Welcome!</h2>
+		<h6><a class="btn btn-primary btn-lg" href="/resume" role="button">Resume</a></h6>
 	</div>
 </div>
 <div class="container .tl">
     <ul class="timeline">
         <li>
-          <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="Hi, I'm Mengtian" id=""></i></a></div>
+          <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="Hi, I'm Mengtian"></i></a></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
-              <img class="img-responsive" src="/static/IMG_3266.JPG" />
+              <img class="img-responsive" src="/static/IMG_3266.JPG" alt="Mengtian"/>
               
             </div>
             <div class="timeline-body">
@@ -26,36 +25,35 @@
         </li>
         
         <li  class="timeline-inverted">
-          <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record invert" rel="tooltip" id=""></i></a></div>
+          <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record invert" rel="tooltip" ></i></a></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
-              <img class="img-responsive" src="/static/IMG_5867.jpg" />
+              <img class="img-responsive" src="/static/IMG_5867.jpg" alt="sketch"/>
               
             </div>
             <div class="timeline-body">
-              <p>I love painting. For me, painting is a way for self expressing, a release of creative energy, and it also helps calm and relax my body.</p>
+              <p>I love sketching. For me, painting is a way for self expressing, a release of creative energy, and it also helps calm and relax my body.</p>
             </div>
           </div>
         </li>
         <li>
-          <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="11 hours ago via Twitter" id=""></i></a></div>
+          <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="Music" ></i></a></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
-              <img class="img-responsive" src="/static/guqin.jpg" />
+              <img class="img-responsive" src="/static/guqin.jpg" alt="music"/>
               
             </div>
             <div class="timeline-body">
-              <p>I like to listening traditional Chinese music, especially Guqin (also called Chinese zither). Chinese zither, is a Chinese traditional plucked musical string instrument with over 2500 years of history.</p>
+              <p>I like listening traditional Chinese music, especially Guqin (also called Chinese zither). Chinese zither, is a Chinese traditional plucked musical string instrument with over 2500 years of history.</p>
               
             </div>
           </div>
         </li>
         <li>
-          <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="11 hours ago via Twitter" id=""></i></a></div>
+          <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record" rel="tooltip" title="Photograph"></i></a></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
-              <img class="img-responsive" src="/static/IMG_5287.JPG" />
-              
+              <img class="img-responsive" src="/static/IMG_5287.JPG" alt="photograph"/>
             </div>
             <div class="timeline-body">
               <p>I love flowers and plants. I take photos of nature and landscapes. They are also great materials for painting. </p>
@@ -65,10 +63,10 @@
         </li>
         
         <li  class="timeline-inverted">
-          <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record invert" rel="tooltip" title="11 hours ago via Twitter" id=""></i></a></div>
+          <div class="timeline-badge primary"><a><i class="glyphicon glyphicon-record invert" rel="tooltip" title="Food"></i></a></div>
           <div class="timeline-panel">
             <div class="timeline-heading">
-              <img class="img-responsive" src="/static/cooking.jpg" />
+              <img class="img-responsive" src="/static/cooking.jpg" alt="japanese food" />
               
             </div>
             <div class="timeline-body">
@@ -84,7 +82,7 @@
 </div>
 <div class="container EmailMe">
 
-<style>
+<style scoped>
     h1
     {
       font-family : Arial, Helvetica, sans-serif;
@@ -99,32 +97,31 @@
 
 </style>  
 <!-- a helper script for vaidating the form-->
-<script language="JavaScript" src="/static/gen_validatorv31.js" type="text/javascript">
+<script src="/static/gen_validatorv31.js" type="text/javascript">
 </script>
-
+<div class="email">
 <h1>Contact Me</h1>
 <form method="POST" name="contactform" action="MAILTO:mtxu@umich.edu"> 
 <p>
 <label for='name'>Your Name:</label> <br>
-<input type="text" name="name">
+<input type="text" name="name" id="name">
 </p>
 <p>
 <label for='email'>Email Address:</label> <br>
-<input type="text" name="email"> <br>
+<input type="text" name="email" id ="email" > <br>
 </p>
 <p>
 <label for='message'>Message:</label> <br>
-<textarea name="message"></textarea>
+<textarea name="message" id = "message"></textarea>
 </p>
 <input type="submit" value="Submit"><br>
 </form>
-
-<script language="JavaScript">
+</div>
+<script>
 // Code for validating the form
 var frmvalidator  = new Validator("contactform");
 frmvalidator.addValidation("name","req","Please provide your name"); 
 frmvalidator.addValidation("email","req","Please provide your email"); 
 frmvalidator.addValidation("email","email","Please enter a valid email address"); 
 </script>
-</div>
 {%endblock%}

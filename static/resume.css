@@ -1,3 +1,12 @@
 .resume > li{
   width: 100%;
 }
+
+
+@media (max-width: 450px){
+	.container {
+		color: #4A4749;
+		background: rgba(0,0,0,0,4);
+		/*border: 1px solid white;*/
+	}
+}
