@@ -42,24 +42,11 @@ class HomeHandler(webapp2.RequestHandler):
         except:
             template = JINJA_ENVIRONMENT.get_template('templates/index.html')
             self.response.write(template.render({'path':'index'}))
-# class PhpHandler(webapp2.RequestHandler):
-#     def get(self):
-#         path=str(self.request.path)
-#         template = JINJA_ENVIRONMENT.get_template('templates/contact-form-handler.php')
-#     def post(self):
-#         path=str(self.request.path)
-#         template = JINJA_ENVIRONMENT.get_template('templates/contact-form-handler.php')
-#         #     # self.response.write(template.render({'hint':'You have successfully logged in!! Way to go!','path':path[1:]}))
-#         # else:
-#         #     logging.info("Incorrect name or password! User input name=%s, password=%s" %(name,pw))
-#         #     template = JINJA_ENVIRONMENT.get_template('templates/login.html')
-#         #     self.response.write(template.render({'hint':'Bad credentials. Try again.','path':path[1:]}))
+
 app = webapp2.WSGIApplication([
     ('/', HomeHandler),
     ('/index', HomeHandler),
     ('/resume', HomeHandler),
     ('/interest', HomeHandler),
     ('/timeline', HomeHandler),
-    # ('/contact-form-handler.php', PhpHandler)
-
 ], debug=True)

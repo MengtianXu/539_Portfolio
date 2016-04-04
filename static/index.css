@@ -213,8 +213,22 @@
 .timeline > li.timeline-inverted > .timeline-badge{
   left: -12px;
 }
+.EmailMe{
+  text-align: center;
+  padding: 10%;
+  /*border: 2px solid yellow;*/
+}
+
+
 
 @media (max-width: 890px) {
+
+    .EmailMe{
+    text-align: center;
+    padding: 10%;
+    margin-left: 140px;
+  }
+
     
     ul.timeline:before {
         left: 10px;
@@ -290,8 +304,11 @@
   .timeline > li > .timeline-panel:after{
       display: none;
   }
+      .EmailMe{
+    text-align: center;
+    padding: 10%;
+    margin-left: 0px;
+  }
 }
-.EmailMe{
-  text-align: center;
-}
+
 
